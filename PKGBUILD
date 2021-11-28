@@ -35,7 +35,7 @@ source=(R-source.tar.gz::"${rsource_url:-https://cran.r-project.org/src/base-pre
     MkRules.local.in
     shortcut.diff
     create-tcltk-bundle.sh
-    https://www.r-project.org/nosvn/winutf8/ucrt3/R-devel-81177-4844.diff)
+    https://www.r-project.org/nosvn/winutf8/ucrt3/R-devel-81252-4878.diff)
 
 # Automatic untar fails due to embedded symlinks
 noextract=(R-source.tar.gz)
@@ -79,7 +79,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/shortcut.diff"
 
   # Custom changes from TK (not everything may apply...)
-  patch -p0 --binary -i "${srcdir}/R-devel-81177-4844.diff" || true
+  patch -p0 --binary -i "${srcdir}/R-devel-81252-4878.diff"
 }
 
 build() {
